@@ -5,5 +5,4 @@
 *.txt
 *.psd
 node_modules/
-public/**/*
 package-lock.json
