@@ -1,5 +1,53 @@
 @import "setup";
+@import "colours";
+@import "typography";
+@import "animation";
 
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
 body {
-    background: #000;
+    background: #222;
+}
+.mainNav {
+    background: $black;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    margin-top: 60px;
+    ul {
+        li {
+            display: inline-block;
+            text-align: center;
+            line-height: 60px;
+            margin-right: 30px;
+            padding: 0 10px;
+            &:hover {
+                border-bottom: solid 1px $green;
+            }
+        }
+    }
+}
+
+main {
+    height: 100vh;
+    display: grid;
+}
+header {
+    display: flex;
+    height: 500px;
+    height: 100vh;    
+    display: flex;
+    align-items: center;
+    align-content: center;
+    .headerContent {
+    }
+}
+.about {
+    background: $black;
+    height: 800px;
+    width: 100%;
 }
