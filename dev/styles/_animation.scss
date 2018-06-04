@@ -9,30 +9,19 @@
     100% {background-color: rgba(0, 0, 0, 0.25)}
 }
 .fadeIn {
-    -webkit-animation: fadeIn 7s ease 1;
     animation: fadeIn 7s ease 1;
 }
-@-webkit-keyframes glowFlicker {
-    0%   {-webkit-filter: drop-shadow( 0px 0px 15px #00f428 );filter: drop-shadow( 0px 0px 15px #00f428 )}
-    100% {-webkit-filter: drop-shadow( 0px 0px 5px #00f428 );filter: drop-shadow( 0px 0px 5px #00f428 )}
-}
 @keyframes glowFlicker {
-    0%   {-webkit-filter: drop-shadow( 0px 0px 15px #00f428 );filter: drop-shadow( 0px 0px 15px #00f428 )}
-    100% {-webkit-filter: drop-shadow( 0px 0px 5px #00f428 );filter: drop-shadow( 0px 0px 5px #00f428 )}
+    0% {filter: drop-shadow(0px 0px 15px $green)}
+    100% {filter: drop-shadow(0px 0px 5px $green)}
 }
 .glowFlicker {
-    -webkit-animation: glowFlicker .05s ease infinite;
     animation: glowFlicker .05s ease infinite;
-}
-@-webkit-keyframes blink {
-    0%   {display: none;}
-    100% {display: block;}
 }
 @keyframes blink {
     50%   {opacity: 0}
     100% {opacity: 1}
 }
 .blink {
-    -webkit-animation: blink .05s infinite;
     animation: blink .5s infinite;
 }

@@ -140,22 +140,56 @@ ul {
   padding: 0; }
 
 /*██████████ HEADINGS ██████████*/
+h1, h2, h3, h4, h5, h6 {
+  color: #00f428; }
+
 h1 {
-  color: #00f428;
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: 'Press Start 2P', 'Consolas', sans-serif;
   text-align: center;
-  font-size: 42px; }
+  font-size: 45px; }
+
+h2 {
+  font-size: 30px;
+  line-height: .9;
+  margin-bottom: 60px;
+  font-family: 'Roboto Slab', 'Consolas', sans-serif;
+  text-align: center; }
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab', 'Consolas', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px; }
 
 /*██████████ BODY COPY ██████████*/
 body {
-  color: #fff; }
+  color: #fff;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300; }
+
+p {
+  line-height: 1.6; }
+
+::-moz-selection {
+  background: #00f428;
+  color: #000; }
+
+::selection {
+  background: #00f428;
+  color: #000; }
 
 /*██████████ LINKS ██████████*/
 a {
   text-decoration: none;
-  color: #fff; }
+  color: #fff;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
   a:hover {
-    color: #00f428; }
+    color: #00f428;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; }
 
 @-webkit-keyframes fadeIn {
   0% {
@@ -175,33 +209,33 @@ a {
 
 .fadeIn {
   -webkit-animation: fadeIn 7s ease 1;
-  animation: fadeIn 7s ease 1; }
+          animation: fadeIn 7s ease 1; }
 
 @-webkit-keyframes glowFlicker {
   0% {
     -webkit-filter: drop-shadow(0px 0px 15px #00f428);
-    filter: drop-shadow(0px 0px 15px #00f428); }
+            filter: drop-shadow(0px 0px 15px #00f428); }
   100% {
     -webkit-filter: drop-shadow(0px 0px 5px #00f428);
-    filter: drop-shadow(0px 0px 5px #00f428); } }
+            filter: drop-shadow(0px 0px 5px #00f428); } }
 
 @keyframes glowFlicker {
   0% {
     -webkit-filter: drop-shadow(0px 0px 15px #00f428);
-    filter: drop-shadow(0px 0px 15px #00f428); }
+            filter: drop-shadow(0px 0px 15px #00f428); }
   100% {
     -webkit-filter: drop-shadow(0px 0px 5px #00f428);
-    filter: drop-shadow(0px 0px 5px #00f428); } }
+            filter: drop-shadow(0px 0px 5px #00f428); } }
 
 .glowFlicker {
   -webkit-animation: glowFlicker .05s ease infinite;
-  animation: glowFlicker .05s ease infinite; }
+          animation: glowFlicker .05s ease infinite; }
 
 @-webkit-keyframes blink {
-  0% {
-    display: none; }
+  50% {
+    opacity: 0; }
   100% {
-    display: block; } }
+    opacity: 1; } }
 
 @keyframes blink {
   50% {
@@ -210,17 +244,23 @@ a {
     opacity: 1; } }
 
 .blink {
-  -webkit-animation: blink .05s infinite;
-  animation: blink .5s infinite; }
+  -webkit-animation: blink .5s infinite;
+          animation: blink .5s infinite; }
 
+/*██████████ GLOBAL ██████████*/
 .wrapper {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 30px; }
+  padding: 0 95px;
+  background: #000; }
 
 body {
   background: #222; }
 
+svg {
+  fill: #00f428; }
+
+/*██████████ NAV ██████████*/
 .mainNav {
   background: #000;
   position: absolute;
@@ -228,19 +268,36 @@ body {
   z-index: 10;
   width: 100%;
   margin-top: 60px; }
-  .mainNav ul li {
-    display: inline-block;
-    text-align: center;
-    line-height: 60px;
-    margin-right: 30px;
-    padding: 0 10px; }
-    .mainNav ul li:hover {
-      border-bottom: solid 1px #00f428; }
+  .mainNav svg {
+    height: 30px;
+    float: left;
+    margin-top: 15px;
+    -webkit-filter: drop-shadow(0px 0px 5px #00f428);
+            filter: drop-shadow(0px 0px 5px #00f428); }
+  .mainNav ul {
+    color: #00f428;
+    float: right;
+    padding: 0; }
+    .mainNav ul li {
+      display: inline-block;
+      line-height: 60px;
+      margin-right: 30px;
+      height: 60px; }
+      .mainNav ul li:last-of-type {
+        margin-right: 0px; }
+      .mainNav ul li a {
+        color: #00f428;
+        display: block; }
+        .mainNav ul li a:hover {
+          -webkit-box-shadow: inset 0px -1px 0px 0px #00f428;
+                  box-shadow: inset 0px -1px 0px 0px #00f428;
+          color: #00f428; }
 
+/*██████████ MAIN ██████████*/
 main {
-  height: 100vh;
-  display: grid; }
+  height: 100vh; }
 
+/*██████████ HEADER ██████████*/
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -253,8 +310,119 @@ header {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center; }
+  header .headerContent {
+    margin: 0 auto; }
 
+/*██████████ ABOUT ██████████*/
 .about {
-  background: #000;
-  height: 800px;
-  width: 100%; }
+  width: 100%;
+  padding-top: 125px;
+  padding-bottom: 125px;
+  background: #000; }
+  .about p {
+    margin: 0 auto 15px auto;
+    max-width: 730px; }
+
+.skills {
+  width: 100%;
+  padding-top: 125px;
+  padding-bottom: 125px;
+  border-bottom: solid 1px #00f428; }
+  .skills ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+    max-width: 730px;
+    margin: 0 auto;
+    text-align: center; }
+    .skills ul svg {
+      height: 65px;
+      width: 100%;
+      -webkit-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out; }
+      .skills ul svg:hover {
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        -webkit-transform: scale(1.15);
+                transform: scale(1.15); }
+
+.portfolio {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0; }
+  .portfolio .portfolioContainer {
+    background: cyan;
+    height: 300px;
+    display: block;
+    max-width: 100%;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
+    .portfolio .portfolioContainer:nth-child(2n+1) {
+      background: red; }
+
+.contact {
+  padding-top: 125px;
+  padding-bottom: 125px;
+  text-align: center; }
+  .contact h2 {
+    margin-bottom: 15px; }
+  .contact .contactForm {
+    max-width: 730px;
+    margin: 0 auto; }
+    .contact .contactForm input, .contact .contactForm textarea {
+      border: 0px;
+      border: solid 1px #00f428;
+      background: #000;
+      width: 100%;
+      resize: vertical;
+      margin-bottom: 30px;
+      color: #fff;
+      padding: 10px 10px; }
+      .contact .contactForm input::-webkit-input-placeholder, .contact .contactForm textarea::-webkit-input-placeholder {
+        color: #00f428; }
+      .contact .contactForm input:-ms-input-placeholder, .contact .contactForm textarea:-ms-input-placeholder {
+        color: #00f428; }
+      .contact .contactForm input::-ms-input-placeholder, .contact .contactForm textarea::-ms-input-placeholder {
+        color: #00f428; }
+      .contact .contactForm input::placeholder, .contact .contactForm textarea::placeholder {
+        color: #00f428; }
+      .contact .contactForm input:focus, .contact .contactForm textarea:focus {
+        -webkit-filter: drop-shadow(0px 0px 5px #00f428);
+                filter: drop-shadow(0px 0px 5px #00f428);
+        outline: 0px;
+        border: solid 1px #00f428;
+        background: #00f428;
+        color: #000; }
+    .contact .contactForm textarea {
+      min-height: 150px; }
+    .contact .contactForm input[type=submit] {
+      border: solid 1px #00f428;
+      width: 33.33%;
+      color: #00f428;
+      margin: 0 auto;
+      display: block; }
+      .contact .contactForm input[type=submit]:focus {
+        color: #000; }
+      .contact .contactForm input[type=submit]:hover {
+        background: #00f428;
+        color: #000;
+        -webkit-filter: drop-shadow(0px 0px 5px #00f428);
+                filter: drop-shadow(0px 0px 5px #00f428); }
+  .contact ul {
+    margin-top: 30px; }
+    .contact ul li {
+      display: inline-block;
+      margin-right: 15px; }
+      .contact ul li:last-of-type {
+        margin-right: 0; }
+      .contact ul li a {
+        color: #00f428;
+        font-size: 35px;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out; }
+        .contact ul li a:hover {
+          -webkit-filter: drop-shadow(0px 0px 5px #00f428);
+                  filter: drop-shadow(0px 0px 5px #00f428);
+          -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }

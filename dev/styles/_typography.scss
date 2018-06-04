@@ -1,23 +1,56 @@
 @mixin PS2P { //@include headingCopy;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'Press Start 2P', 'Consolas', sans-serif;
 }
-
+@mixin OpenSans { //@include headingCopy;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+}
+@mixin RobotoSlab { //@include headingCopy;
+    font-family: 'Roboto Slab', 'Consolas', sans-serif;
+}
 /*██████████ HEADINGS ██████████*/
-h1 {
+h1, h2, h3, h4, h5, h6 {
     color: $green;
+}
+h1 {
     @include PS2P;
     text-align: center;
-    font-size: 42px;
+    font-size: 45px;
+}
+h2 {
+    font-size: 30px;
+    line-height: .9;
+    margin-bottom: 60px;
+    @include RobotoSlab;
+    text-align: center;
+}
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    @include RobotoSlab;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 /*██████████ BODY COPY ██████████*/
 body {
     color: $white;
+    @include OpenSans;
+    font-weight: 300;
 }
+p {
+    line-height: 1.6;
+}
+::selection {
+        background: $green;
+        color: $black;
+    }
 /*██████████ LINKS ██████████*/
 a {
     text-decoration: none;
     color: $white;
+    transition: all .2s ease-in-out;
     &:hover {
         color: $green;
+        transition: all .2s ease-in-out;
     }
 }

@@ -200,12 +200,10 @@ String.prototype.rightChars = function(n){
       j = 0;
 
     if (currentText === newString) {
-      console.log("Our strings our equal, nothing to type");
       return $e;
     }
 
     if (currentText !== $e.html()) {
-      console.error("Typer does not work on elements with child elements.");
       return $e;
     }
 

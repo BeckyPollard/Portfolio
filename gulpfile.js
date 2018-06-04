@@ -40,4 +40,5 @@ gulp.task('default', ['browser-sync','styles', 'scripts'], () => {
 	gulp.watch('dev/**/*.js',['js']);
 	gulp.watch('dev/**/*.scss',['styles']);
 	gulp.watch('./public/styles/style.css',reload);
+	gulp.watch('*.html',reload);
 });
