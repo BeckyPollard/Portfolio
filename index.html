@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name="description" content="">
@@ -16,7 +16,7 @@
 <body>
     <nav class="mainNav">
         <div class="clear wrapper">
-            <svg viewBox="0 0 630 248.4">
+            <svg class="glowFlicker" viewBox="0 0 630 248.4">
             	<path d="M215.5,248.4V0h170.6v35.5h28.4v71h-28.4v35.5h28.4v71h-28.4v35.5H215.5z M272.3,106.4h85.3v-71h-85.3V106.4z M272.3,212.9h85.3v-71h-85.3V212.9z"/>
             	<path d="M107.7,248.4v-35.5H71.8v-35.5H35.9v-35.5H0v-35.5h35.9V71h35.9V35.5h35.9V0h71.8v35.5h-35.9V71h-35.9v35.5H71.8v35.5h35.9v35.5h35.9v35.5h35.9v35.5H107.7z"/>
             	<path d="M450.4,248.4v-35.5h35.9v-35.5h35.9v-35.5h35.9v-35.5h-35.9V71h-35.9V35.5h-35.9V0h71.8v35.5h35.9V71h35.9v35.5H630v35.5h-35.9v35.5h-35.9v35.5h-35.9v35.5H450.4z"/>
@@ -30,6 +30,9 @@
         </div>
     </nav>
     <main>
+        <div id="particles-js"></div>
+        <button id="reduceAnimation">Reduce Animation</button>
+        <canvas id="headerCanvas"class="fadeOutScroll"></canvas>
         <header>
             <div class="headerContent">
                 <h1 class="glowFlicker"><span data-typer-targets="Becky Pollard"></span><span class="blink">_</span></h1>
@@ -41,17 +44,85 @@
             <p>Away from my keyboard I enjoy exploring the city's greenspaces, playing videogames, making small craft projects, and theatre. </p>
             <p>I believe that anything is possible through the combined powers of the internet and determination (and a good night's sleep). I want to create beautiful digital experiences everyone can share and enjoy.</p>
         </section>
+        
         <section class="portfolio wrapper" id="portfolio">
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
-            <div class="portfolioContainer"></div>
+            <h2>Portfolio Highlights</h2>
+            <div class="portfolioPieces">
+               
+                <div class="portfolioPiece">
+                    <div class="imageContainer">
+                        <a href="http://beckypollard.com/portfolio/simpleflex/"><img src="/public/images/mockup-simpleflex.jpg" alt=""></a>
+                    </div>
+                    <div class="portfolioDesc">
+                        <a href="http://beckypollard.com/portfolio/simpleflex/"><h4>SimpleFlex</h4></a>
+                        <h5>PSD Convert, JavaScript, Google Maps</h5>
+                        <p>Hand-coding a fully responsive single-page website from a .PSD design, a lesson in pixel-perfect attention and CSS media queries. </p>
+                        <ul>
+                            <li><a target="_blank" href="http://beckypollard.com/portfolio/simpleflex/">View Live</a></li>
+                            <li><a target="_blank" href="https://github.com/BeckyPollard/SimpleFlex">View GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="portfolioPiece">
+                    <div class="imageContainer">
+                        <a href="http://beckypollard.com/portfolio/jqueryOS/"><img src="/public/images/mockup-jqueryos.jpg" alt=""></a>
+                    </div>
+                    <div class="portfolioDesc">
+                        <a href="http://beckypollard.com/portfolio/wineONdine/"><h4>jQuery OS</h4></a>
+                        <h5>jQuery, jQuery UI</h5>
+                        <p>Using jQuery and jQuery UI to emulate the functions of a computer desktop and a few common applications.</p>
+                        <ul>
+                            <li><a target="_blank" href="http://beckypollard.com/portfolio/jqueryOS/">View Live</a></li>
+                            <li><a target="_blank" href="https://github.com/BeckyPollard/jQueryOS">View GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="portfolioPiece">
+                    <div class="imageContainer">
+                        <a href="http://beckypollard.com/portfolio/wineONdine/"><img src="/public/images/mockup-wineondineon.jpg" alt=""></a>
+                    </div>
+                    <div class="portfolioDesc">
+                        <a href="http://beckypollard.com/portfolio/wineONdine/"><h4>Wine ON Dine ON</h4></a>
+                        <h5>JavaScript, React, React Router, API</h5>
+                        <p>In partnership with <a href="http://www.kweenofcode.com/">Ky Capstick</a> and <a href="http://michaelyiu.com/">Michael Yiu</a>, a one-page web application calling three APIs to suggest a random wine and pair it with a selection of dishes that match with the flavour of the wine.</p>
+                        <ul>
+                            <li><a target="_blank" href="http://beckypollard.com/portfolio/wineONdine/">View Live</a></li>
+                            <li><a target="_blank" href="https://github.com/BeckyPollard/WineONDineON">View GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="portfolioPiece">
+                    <div class="imageContainer">
+                        <a href="http://beckypollard.com/portfolio/homeVR/"><img src="/public/images/mockup-homevr.jpg" alt=""></a>
+                    </div>
+                    <div class="portfolioDesc">
+                        <a href="http://beckypollard.com/portfolio/homeVR/"><h4>Home VR</h4></a>
+                        <h5>A-Frame, JavaScript, 3D Modelling</h5>
+                        <p>A creative coding project exploring A-Frame for web VR and 3D environments.</p>
+                        <ul>
+                            <li><a target="_blank" href="http://beckypollard.com/portfolio/homeVR/">View Live</a></li>
+                            <li><a target="_blank" href="https://github.com/BeckyPollard/homeVR">View GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="portfolioPiece">
+                    <div class="imageContainer">
+                        <a href="http://beckypollard.com/portfolio/EmojiExpressions/"><img src="/public/images/mockup1.jpg" alt=""></a>
+                    </div>
+                    <div class="portfolioDesc">
+                        <a href="http://beckypollard.com/portfolio/EmojiExpressions/"><h4>Emoji Expressions</h4></a>
+                        <h5>JavaScript, API, Facial Recognition</h5>
+                        <p>In partnership with <a href="http://www.lucas-knight.com/">Lucas Knight</a>, a project that recognizes the face in an image and interprets that emotion as an emoji.</p>
+                        <ul>
+                            <li><a target="_blank" href="http://beckypollard.com/portfolio/EmojiExpressions/">View Live</a></li>
+                            <li><a target="_blank" href="https://github.com/BeckyPollard/EmojiExpressions">View GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
         </section>
+        
         <section class="skills wrapper" id="skills">
             <h2 class="glowFlicker">Skills &amp; Toolkit</h2>
                 <ul>
@@ -131,16 +202,24 @@
                 <input type="submit" value="Send">
             </form>
             <ul>
-                <li><a href=""><i class="fab fa-github-square"></i></a></li>
-                <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
-                <li><a href=""><i class="fab fa-medium"></i></a></li>
-                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                <li><a href=""><i class="fab fa-behance-square"></i></a></li>
+                <li><a href="https://github.com/BeckyPollard"><i class="fab fa-github-square"></i></a></li>
+                <li><a href="https://twitter.com/BeckyIRL"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="https://medium.com/@beckyIRL"><i class="fab fa-medium"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/becky-pollard/"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://codepen.io/BeckyIRL/"><svg viewBox="0 0 448 512"><path d="M129.6,256.1c-11,7.4-21.8,14.5-32.9,22c0-14.9,0-29.1,0-44C107.8,241.6,118.6,248.7,129.6,256.1z M207.5,308.1c-16.2-10.7-32.4-21.3-48.2-32.4c-4.5-3.2-7.5-3.1-11.9,0c-13.2,9.3-26.8,18.1-40.4,27.3c34.5,23,68.7,45.8,103,68.6c1.1-1.6,0.6-2.9,0.6-4.1c0-17.8-0.1-35.7,0.1-53.5C210.8,311.2,209.8,309.6,207.5,308.1z M239.3,203.2c17.8,11.9,35.6,23.8,53.3,35.7c1.3,0.9,2.3,1.2,3.8,0.2c14.7-10,29.5-19.8,44.6-29.9c-34.6-23-68.8-45.9-103.7-69.1c0,20.5,0,40.1,0,59.6C237.3,201.4,238,202.3,239.3,203.2z M155.3,238.9c17.8-11.9,35.5-23.8,53.3-35.7c1.3-0.9,2-1.7,2-3.4c-0.1-19.6,0-39.1,0-59.7c-35,23.3-69.2,46.1-103.7,69.1c15.2,10.1,30.1,20.1,44.9,30.1C153.4,240.3,154.3,239.6,155.3,238.9z M351.4,278.1c0-15,0-29.1,0-44.1c-11.3,7.6-22,14.7-33,22.1C329.6,263.6,340.3,270.7,351.4,278.1z M226,226c-1.9-1.3-3.1-0.6-4.6,0.4c-6.7,4.5-13.4,9-20.1,13.5c-8,5.3-15.9,10.6-24.2,16.1c15.2,10.2,29.9,20,44.7,29.9c1.2,0.8,2.2,1.4,3.8,0.3c14.9-10.1,29.9-20,45.2-30.2C255.7,246,240.8,236.1,226,226z M448,80v352c0,26.5-21.5,48-48,48H48c-26.5,0-48-21.5-48-48V80c0-26.5,21.5-48,48-48h352C426.5,32,448,53.5,448,80z M378.1,211.6c0.1-6.5-2.4-11.2-7.9-14.9c-45.6-30.3-91.2-60.7-136.7-91c-7.6-5-11.5-5-19,0c-45.6,30.3-91.1,60.8-136.8,91c-5.5,3.7-7.9,8.3-7.9,14.8c0.1,29.7,0.1,59.4,0,89.1c0,6.3,2.3,10.9,7.7,14.5c46,30.5,91.9,61.1,137.8,91.8c5.9,3.9,11.4,3.9,17.3,0c45.9-30.7,91.8-61.3,137.8-91.8c5.4-3.6,7.8-8.1,7.7-14.5c-0.1-14.9,0-29.9,0-44.8C378.1,241.2,378,226.4,378.1,211.6z M291.9,273.8c-17.2,11.5-34.3,23-51.6,34.4c-2.1,1.4-3.1,2.9-3.1,5.5c0.1,18.3,0.1,36.5,0.1,54.8c0,0.9-0.5,2,0.8,3C272.3,348.8,306.5,326,341,303c-15.1-10.1-29.9-19.9-44.6-29.9C294.3,271.7,293.3,272.9,291.9,273.8z"/></svg></a></li>
             </ul>
         </section>
     </main>
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+    <script src="public/scripts/three.js"></script>
+    <script src="public/scripts/EffectComposer.js"></script>
+    <script src="public/scripts/DigitalGlitch.js"></script>
+    <script src="public/scripts/GlitchPass.js"></script>
+    <script src="public/scripts/CopyShader.js"></script>
+    <script src="public/scripts/ShaderPass.js"></script>
+    <script src="public/scripts/RenderPass.js"></script>
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="public/scripts/main.js"></script>
     <script src="public/scripts/typer.js"></script>
 </body>

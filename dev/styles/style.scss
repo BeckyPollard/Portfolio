@@ -7,17 +7,22 @@
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 95px;
-    background: $black;
 }
 body {
-    background: #222;
+    background: $black;
 }
 svg {
     fill: $green;
 }
+section {
+    //border-right: solid 1px $green;
+    //border-left: solid 1px $green;
+    background: $black;
+}
+/*██████████ HEADER ██████████*/
+
 /*██████████ NAV ██████████*/
 .mainNav {
-    background: $black;
     position: absolute;
     top: 0;
     z-index: 10;
@@ -65,9 +70,65 @@ header {
     display: flex;
     align-items: center;
     align-content: center;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-image: url(../images/black-horizontal.png);
+        opacity: .3;
+        z-index: -1;
+    }
     .headerContent {
         margin: 0 auto;
+    }   
+}
+#reduceAnimation {
+    position: absolute;
+    display: block;
+    color: $green;
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    top: 20px;
+    right: 0;
+    padding-right: 30px;
+    cursor: pointer;
+    z-index: 50;
+    transition: none;
+    font-size: 12px;
+    &:hover {
+        color: $white;
     }
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 20px;
+        display: block;
+        background: $green;
+        height: 1px;
+        width: 60%;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        display: block;
+        background: $green;
+        height: 1px;
+        width: 30%;
+        top: 28px;
+    }
+}
+canvas {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -2;
 }
 /*██████████ ABOUT ██████████*/
 .about {
@@ -75,22 +136,85 @@ header {
     padding-top: 125px;
     padding-bottom: 125px;
     background: $black;
+    border-top: solid 1px $green;
     p {
         margin: 0 auto 15px auto;
         max-width: 730px;
     }
 }
+//██████████ PORTFOLIO ██████████
+.portfolio {
+    padding-top: 125px;
+    border-top: solid 1px $green;
+}
+.portfolioPieces {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    .portfolioPiece {
+        display: block;
+        background: $black;
+        max-width: 100%;
+        border: solid 1px $green;
+        transition: all .4s ease-in-out;
+        &:hover {
+        transition: all .4s ease-in-out;
+        transform: scale(1.03);
+        animation: glowFlicker .05s ease infinite;
+        }
+        .imageContainer {
+            width: 100%;
+            img {
+                object-fit: cover;
+                display: block;
+                filter: grayscale(100%) brightness(80%);
+                &:hover {
+                    filter: grayscale(0%)
+                }
+            }
+        }
+        .portfolioDesc {
+            min-height: 250px;
+            color: $green;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding: 30px 15px;
+            p {
+                margin-top: 15px;
+                color: $white;
+                a {
+                    color: $green;
+                }
+            }
+            ul{
+                margin-top: 15px;
+                li {
+                    border: solid 1px $green;
+                    display: inline-block;
+                    a {
+                        padding: 5px 10px;
+                        &:hover{
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 //██████████ SKILLS ██████████
 .skills {
     width: 100%;
-    padding-top: 125px;
     padding-bottom: 125px;
+    padding-top: 125px;
     border-bottom: solid 1px $green;
+    color: $green;
     ul {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 30px;
-        max-width: 730px;
         margin: 0 auto;
         text-align: center;
         svg {
@@ -102,23 +226,6 @@ header {
                 transform: scale(1.15);
             }
         }
-    }
-}
-//██████████ PORTFOLIO ██████████
-.portfolio {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 0;
-    .portfolioContainer {
-        background: cyan;
-        height: 300px;
-        display: block;
-        max-width: 100%;
-        filter: grayscale(100%);
-        &:nth-child(2n+1) {//TEMP
-            background: red;//TEMP
-        }//TEMP
     }
 }
 //██████████ CONTACT ██████████
@@ -145,7 +252,7 @@ header {
                 color: $green;
             }
             &:focus {
-                filter: drop-shadow( 0px 0px 5px $green);
+                animation: glowFlicker .05s ease infinite;
                 outline: 0px;
                 border: solid 1px $green;
                 background: $green;
@@ -174,7 +281,7 @@ header {
     ul {
         margin-top: 30px;
         li {
-        display: inline-block;
+            display: inline-block;
             margin-right: 15px;
             &:last-of-type {
                 margin-right: 0;
@@ -183,10 +290,15 @@ header {
             color: $green;
             font-size: 35px;
             transition: all .2s ease-in-out;
+            display: flex;
+            align-items: center;
             &:hover {
                 filter: drop-shadow( 0px 0px 5px $green);
                 transition: all .2s ease-in-out;
                 }
+            svg {
+                height: 35px;
+            }
             }
         }
     }

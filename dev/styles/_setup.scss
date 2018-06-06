@@ -16,9 +16,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
+    transition: all .4s ease-in-out;
 }
 img {
     max-width: 100%;
+    object-fit: cover;
 }
 ul {
     list-style: none;

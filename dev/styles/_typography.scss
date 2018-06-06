@@ -8,28 +8,35 @@
     font-family: 'Roboto Slab', 'Consolas', sans-serif;
 }
 /*██████████ HEADINGS ██████████*/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
     color: $green;
+    text-align: center;
 }
 h1 {
     @include PS2P;
-    text-align: center;
     font-size: 45px;
+    z-index: 5;
 }
 h2 {
     font-size: 30px;
     line-height: .9;
     margin-bottom: 60px;
     @include RobotoSlab;
-    text-align: center;
 }
 h3 {
     font-size: 20px;
     margin-bottom: 10px;
     @include RobotoSlab;
-    text-align: center;
     text-transform: uppercase;
     margin-bottom: 15px;
+}
+h4 {
+    font-size: 20px;
+    text-align: left;
+}
+h5 {
+    font-size: 12px;
+    color: $white;
 }
 /*██████████ BODY COPY ██████████*/
 body {
