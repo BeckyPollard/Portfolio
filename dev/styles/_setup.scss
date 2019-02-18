@@ -26,3 +26,17 @@ ul {
     list-style: none;
     padding: 0;
 }
+* {
+  &:active, &:focus {
+    outline: none;
+    border: none;
+  }
+}
+a {
+  &:active, &:focus {
+    outline: none;
+    background: #00f4293a !important;
+    border: none;
+    text-shadow: 0px 0px 10px $green;
+  }
+}

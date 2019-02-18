@@ -143,6 +143,16 @@ ul {
   list-style: none;
   padding: 0; }
 
+*:active, *:focus {
+  outline: none;
+  border: none; }
+
+a:active, a:focus {
+  outline: none;
+  background: #00f4293a !important;
+  border: none;
+  text-shadow: 0px 0px 10px #00f428; }
+
 /*██████████ HEADINGS ██████████*/
 h1, h2, h3, h4 {
   color: #00f428;
@@ -182,10 +192,6 @@ body {
 
 p {
   line-height: 1.6; }
-
-::-moz-selection {
-  background: #00f428;
-  color: #000; }
 
 ::selection {
   background: #00f428;
@@ -488,8 +494,6 @@ canvas {
       color: #fff;
       padding: 10px 10px; }
       .contact .contactForm input::-webkit-input-placeholder, .contact .contactForm textarea::-webkit-input-placeholder {
-        color: #00f428; }
-      .contact .contactForm input:-ms-input-placeholder, .contact .contactForm textarea:-ms-input-placeholder {
         color: #00f428; }
       .contact .contactForm input::-ms-input-placeholder, .contact .contactForm textarea::-ms-input-placeholder {
         color: #00f428; }
